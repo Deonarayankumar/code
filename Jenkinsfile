@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    tools {nodejs "node"}
+    tools {nodejs "NodeJS"}
     
     stages {
         stage('Checkout') {
@@ -18,7 +18,6 @@ pipeline {
             steps {
                 // Add your build steps here. just adding in a comment
                 // For example, if you're using npm to build the JavaScript project:
-                sh 'apk add --update nodejs npm'
                 sh 'npm install'
                 sh 'npm run build'
                 echo 'Building...'
