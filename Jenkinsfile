@@ -1,6 +1,10 @@
 pipeline {
-    agent any
-
+    agent{
+        docker {
+            image 'node:20.10.0-alpine3.19'
+            args '-p 3000:3000'
+        }
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -16,7 +20,6 @@ pipeline {
             steps {
                 // Add your build steps here. just adding in a comment
                 // For example, if you're using npm to build the JavaScript project:
-                sh 'yum install npm'
                 sh 'npm install'
                 sh 'npm run build'
             }
