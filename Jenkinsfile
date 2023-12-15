@@ -16,6 +16,7 @@ pipeline {
             steps {
                 // Add your build steps here. just adding in a comment
                 // For example, if you're using npm to build the JavaScript project:
+                sh 'yum install npm'
                 sh 'npm install'
                 sh 'npm run build'
             }
