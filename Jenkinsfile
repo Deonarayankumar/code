@@ -17,6 +17,7 @@ pipeline {
                 // For example, if you're using npm to build the JavaScript project:
                 // sh 'npm install'
                 // sh 'npm run build'
+                echo 'Building...'
             }
         }
         
@@ -25,6 +26,7 @@ pipeline {
                 // Add your test steps here
                 // For example, if you're using npm to run tests:
                 //sh 'npm test'
+                echo 'Testing...'
             }
         }
         
@@ -33,6 +35,7 @@ pipeline {
                 // Add your deployment steps here
                 // For example, if you're using npm to deploy:
                 //sh 'npm run deploy'
+                echo 'Deploying'
             }
         }
     }
