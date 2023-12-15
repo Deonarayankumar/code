@@ -1,10 +1,5 @@
 pipeline {
-    agent{
-        docker {
-            image 'node:20.10.0-alpine3.19'
-            args '-p 3000:3000'
-        }
-    }
+    agents any
     stages {
         stage('Checkout') {
             steps {
@@ -20,8 +15,8 @@ pipeline {
             steps {
                 // Add your build steps here. just adding in a comment
                 // For example, if you're using npm to build the JavaScript project:
-                sh 'npm install'
-                sh 'npm run build'
+                // sh 'npm install'
+                // sh 'npm run build'
             }
         }
         
@@ -29,7 +24,7 @@ pipeline {
             steps {
                 // Add your test steps here
                 // For example, if you're using npm to run tests:
-                sh 'npm test'
+                //sh 'npm test'
             }
         }
         
@@ -37,7 +32,7 @@ pipeline {
             steps {
                 // Add your deployment steps here
                 // For example, if you're using npm to deploy:
-                sh 'npm run deploy'
+                //sh 'npm run deploy'
             }
         }
     }
